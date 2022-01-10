@@ -1,6 +1,7 @@
 context("m6Aboost")
 library(m6Aboost)
 
+if (.Platform$OS.type != "linux") {
 test_that("m6Aboost works as expected",{
     testpath <- system.file("extdata", package = "m6Aboost")
     test <- readRDS(file.path(testpath, "test.rds"))
@@ -13,3 +14,4 @@ test_that("m6Aboost works as expected",{
     expect_is(test, "GRanges")
 }
 )
+}
